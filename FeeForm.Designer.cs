@@ -43,14 +43,16 @@
             textBox3 = new TextBox();
             comboBox1 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
-            button2 = new Button();
+            buttonview = new Button();
+            buttonprint = new Button();
             button4 = new Button();
             button3 = new Button();
             comboBox3 = new ComboBox();
             label18 = new Label();
             label21 = new Label();
             panel1 = new Panel();
+            buttonsingleprint = new Button();
+            label9 = new Label();
             label22 = new Label();
             label20 = new Label();
             label19 = new Label();
@@ -69,7 +71,6 @@
             Balance = new Label();
             PaymentDate = new Label();
             Receipt = new Label();
-            label9 = new Label();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -215,29 +216,31 @@
             dateTimePicker1.Size = new Size(300, 31);
             dateTimePicker1.TabIndex = 4;
             // 
-            // button1
+            // buttonview
             // 
-            button1.BackColor = Color.FromArgb(0, 0, 192);
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(416, 1293);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 38);
-            button1.TabIndex = 6;
-            button1.Text = "VIEW";
-            button1.UseVisualStyleBackColor = false;
+            buttonview.BackColor = Color.FromArgb(0, 0, 192);
+            buttonview.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonview.ForeColor = SystemColors.ButtonHighlight;
+            buttonview.Location = new Point(326, 1293);
+            buttonview.Name = "buttonview";
+            buttonview.Size = new Size(202, 48);
+            buttonview.TabIndex = 6;
+            buttonview.Text = "VIEW PAYMENT";
+            buttonview.UseVisualStyleBackColor = false;
+            buttonview.Click += buttonview_Click_1;
             // 
-            // button2
+            // buttonprint
             // 
-            button2.BackColor = Color.Gray;
-            button2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(616, 1293);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 38);
-            button2.TabIndex = 6;
-            button2.Text = "PRINT";
-            button2.UseVisualStyleBackColor = false;
+            buttonprint.BackColor = Color.Gray;
+            buttonprint.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonprint.ForeColor = SystemColors.ButtonHighlight;
+            buttonprint.Location = new Point(815, 1295);
+            buttonprint.Name = "buttonprint";
+            buttonprint.Size = new Size(112, 46);
+            buttonprint.TabIndex = 6;
+            buttonprint.Text = "PRINT";
+            buttonprint.UseVisualStyleBackColor = false;
+            buttonprint.Click += buttonprint_Click;
             // 
             // button4
             // 
@@ -257,12 +260,13 @@
             button3.BackColor = Color.FromArgb(0, 0, 192);
             button3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(801, 1293);
+            button3.Location = new Point(561, 1293);
             button3.Name = "button3";
-            button3.Size = new Size(112, 40);
+            button3.Size = new Size(210, 48);
             button3.TabIndex = 6;
-            button3.Text = "CHANGE";
+            button3.Text = "PREVIEW RECEIPTS";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // comboBox3
             // 
@@ -298,6 +302,7 @@
             // 
             panel1.AutoScroll = true;
             panel1.BackColor = SystemColors.ButtonFace;
+            panel1.Controls.Add(buttonsingleprint);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label22);
             panel1.Controls.Add(label20);
@@ -315,8 +320,8 @@
             panel1.Controls.Add(comboBox3);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonprint);
+            panel1.Controls.Add(buttonview);
             panel1.Controls.Add(dateTimePicker1);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(textBox3);
@@ -337,6 +342,29 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1331, 812);
             panel1.TabIndex = 0;
+            // 
+            // buttonsingleprint
+            // 
+            buttonsingleprint.BackColor = Color.Aquamarine;
+            buttonsingleprint.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonsingleprint.Location = new Point(970, 1295);
+            buttonsingleprint.Name = "buttonsingleprint";
+            buttonsingleprint.Size = new Size(158, 46);
+            buttonsingleprint.TabIndex = 17;
+            buttonsingleprint.Text = "Single Print";
+            buttonsingleprint.UseVisualStyleBackColor = false;
+            buttonsingleprint.Click += buttonsingleprint_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Navy;
+            label9.Location = new Point(436, 1539);
+            label9.Name = "label9";
+            label9.Size = new Size(477, 21);
+            label9.TabIndex = 16;
+            label9.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
             // 
             // label22
             // 
@@ -531,17 +559,6 @@
             Receipt.TabIndex = 0;
             Receipt.Text = "Receipt Number";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Navy;
-            label9.Location = new Point(436, 1539);
-            label9.Name = "label9";
-            label9.Size = new Size(477, 21);
-            label9.TabIndex = 16;
-            label9.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
-            // 
             // FeeForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -584,7 +601,7 @@
         private Label label10;
         private Button button3;
         private Button button2;
-        private Button button1;
+        private Button buttonview;
         private Button button4;
         private ComboBox comboBox3;
         
@@ -625,5 +642,7 @@
         private Label label20;
         private Label label19;
         private Label PaymentValue;
+        private Button buttonprint;
+        private Button buttonsingleprint;
     }
 }

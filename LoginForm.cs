@@ -207,8 +207,8 @@ namespace School_Management_System
 
         private void loginbutton_MouseEnter(object sender, EventArgs e)
         {
-            loginbutton.BackColor = Color.LightGreen;
-            loginbutton.ForeColor = Color.Blue;
+            loginbutton.BackColor = Color.LightSkyBlue;
+            loginbutton.ForeColor = Color.AliceBlue;
         }
 
         private void loginbutton_MouseLeave(object sender, EventArgs e)

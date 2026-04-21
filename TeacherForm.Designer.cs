@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherForm));
             panel1 = new Panel();
+            label22 = new Label();
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
             pictureBox1 = new PictureBox();
@@ -67,7 +68,6 @@
             label2 = new Label();
             label1 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            label22 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -116,6 +116,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1310, 1302);
             panel1.TabIndex = 0;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Navy;
+            label22.Location = new Point(355, 1272);
+            label22.Name = "label22";
+            label22.Size = new Size(477, 21);
+            label22.TabIndex = 15;
+            label22.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
             // 
             // comboBox2
             // 
@@ -426,9 +437,9 @@
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(355, 232);
             label4.Name = "label4";
-            label4.Size = new Size(112, 28);
+            label4.Size = new Size(95, 28);
             label4.TabIndex = 0;
-            label4.Text = "Last Name";
+            label4.Text = "Surname";
             // 
             // textBox2
             // 
@@ -481,17 +492,6 @@
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.Navy;
-            label22.Location = new Point(355, 1272);
-            label22.Name = "label22";
-            label22.Size = new Size(477, 21);
-            label22.TabIndex = 15;
-            label22.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
             // 
             // TeacherForm
             // 

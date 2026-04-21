@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label22 = new Label();
             dataGridView1 = new DataGridView();
             button3 = new Button();
             button2 = new Button();
@@ -46,7 +47,6 @@
             textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            label22 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -78,6 +78,17 @@
             panel1.Size = new Size(1335, 843);
             panel1.TabIndex = 0;
             // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = Color.Navy;
+            label22.Location = new Point(410, 1063);
+            label22.Name = "label22";
+            label22.Size = new Size(477, 21);
+            label22.TabIndex = 16;
+            label22.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
+            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.LightSkyBlue;
@@ -87,6 +98,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1288, 260);
             dataGridView1.TabIndex = 5;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button3
             // 
@@ -251,17 +263,6 @@
             label1.TabIndex = 0;
             label1.Text = "Sport Registration Form";
             label1.Click += label1_Click;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("High Tower Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.Navy;
-            label22.Location = new Point(410, 1063);
-            label22.Name = "label22";
-            label22.Size = new Size(477, 21);
-            label22.TabIndex = 16;
-            label22.Text = " Copyright© 2026, All right reserved. @Mwanache Software";
             // 
             // SportForm
             // 

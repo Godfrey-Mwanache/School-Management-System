@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             exampanel = new Panel();
+            buttonSortPositions = new Button();
             buttoncomputeresult = new Button();
             buttonsavemarks = new Button();
             dataGridView1 = new DataGridView();
             buttonexamdetails = new Button();
-            buttonprintresult = new Button();
             buttonviewresult = new Button();
             buttonentermarks = new Button();
             comboterm = new ComboBox();
@@ -43,6 +43,7 @@
             labelclass = new Label();
             labelexamtype = new Label();
             exampanelheading = new Label();
+            buttonupdate = new Button();
             exampanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -51,11 +52,12 @@
             // 
             exampanel.AutoScroll = true;
             exampanel.BackColor = SystemColors.ButtonHighlight;
+            exampanel.Controls.Add(buttonSortPositions);
             exampanel.Controls.Add(buttoncomputeresult);
             exampanel.Controls.Add(buttonsavemarks);
             exampanel.Controls.Add(dataGridView1);
             exampanel.Controls.Add(buttonexamdetails);
-            exampanel.Controls.Add(buttonprintresult);
+            exampanel.Controls.Add(buttonupdate);
             exampanel.Controls.Add(buttonviewresult);
             exampanel.Controls.Add(buttonentermarks);
             exampanel.Controls.Add(comboterm);
@@ -67,26 +69,39 @@
             exampanel.Controls.Add(exampanelheading);
             exampanel.Location = new Point(0, 0);
             exampanel.Name = "exampanel";
-            exampanel.Size = new Size(1282, 2244);
+            exampanel.Size = new Size(1289, 2244);
             exampanel.TabIndex = 0;
-            exampanel.Paint += exampanel_Paint;
+            // 
+            // buttonSortPositions
+            // 
+            buttonSortPositions.BackColor = Color.Navy;
+            buttonSortPositions.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSortPositions.ForeColor = SystemColors.ButtonHighlight;
+            buttonSortPositions.Location = new Point(151, 2134);
+            buttonSortPositions.Name = "buttonSortPositions";
+            buttonSortPositions.Size = new Size(171, 62);
+            buttonSortPositions.TabIndex = 6;
+            buttonSortPositions.Text = "Sort  Positions";
+            buttonSortPositions.UseVisualStyleBackColor = false;
+            buttonSortPositions.Click += buttonSortPositions_Click;
             // 
             // buttoncomputeresult
             // 
-            buttoncomputeresult.BackColor = Color.Aqua;
+            buttoncomputeresult.BackColor = Color.SkyBlue;
             buttoncomputeresult.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttoncomputeresult.Location = new Point(683, 2130);
+            buttoncomputeresult.Location = new Point(943, 2128);
             buttoncomputeresult.Name = "buttoncomputeresult";
             buttoncomputeresult.Size = new Size(242, 63);
             buttoncomputeresult.TabIndex = 5;
             buttoncomputeresult.Text = "COMPUTE RESULTS";
             buttoncomputeresult.UseVisualStyleBackColor = false;
+            buttoncomputeresult.Click += buttoncomputeresult_Click;
             // 
             // buttonsavemarks
             // 
             buttonsavemarks.BackColor = Color.Aqua;
             buttonsavemarks.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonsavemarks.Location = new Point(327, 2129);
+            buttonsavemarks.Location = new Point(634, 2125);
             buttonsavemarks.Name = "buttonsavemarks";
             buttonsavemarks.Size = new Size(206, 69);
             buttonsavemarks.TabIndex = 5;
@@ -103,7 +118,7 @@
             dataGridView1.Location = new Point(21, 431);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1258, 1616);
+            dataGridView1.Size = new Size(1233, 1543);
             dataGridView1.TabIndex = 4;
             // 
             // buttonexamdetails
@@ -119,18 +134,6 @@
             buttonexamdetails.UseVisualStyleBackColor = false;
             buttonexamdetails.Click += buttonexamdetails_Click;
             // 
-            // buttonprintresult
-            // 
-            buttonprintresult.BackColor = Color.Chartreuse;
-            buttonprintresult.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonprintresult.ForeColor = Color.Blue;
-            buttonprintresult.Location = new Point(940, 364);
-            buttonprintresult.Name = "buttonprintresult";
-            buttonprintresult.Size = new Size(170, 61);
-            buttonprintresult.TabIndex = 3;
-            buttonprintresult.Text = "Print Result";
-            buttonprintresult.UseVisualStyleBackColor = false;
-            // 
             // buttonviewresult
             // 
             buttonviewresult.BackColor = Color.AliceBlue;
@@ -140,8 +143,9 @@
             buttonviewresult.Name = "buttonviewresult";
             buttonviewresult.Size = new Size(170, 61);
             buttonviewresult.TabIndex = 3;
-            buttonviewresult.Text = "View Results";
+            buttonviewresult.Text = "Search Results";
             buttonviewresult.UseVisualStyleBackColor = false;
+            buttonviewresult.Click += buttonviewresult_Click;
             // 
             // buttonentermarks
             // 
@@ -164,7 +168,6 @@
             comboterm.Name = "comboterm";
             comboterm.Size = new Size(121, 33);
             comboterm.TabIndex = 2;
-            comboterm.SelectedIndexChanged += comboterm_SelectedIndexChanged;
             // 
             // combolevel
             // 
@@ -185,7 +188,6 @@
             comboexamtype.Name = "comboexamtype";
             comboexamtype.Size = new Size(369, 33);
             comboexamtype.TabIndex = 2;
-            comboexamtype.SelectedIndexChanged += comboexamtype_SelectedIndexChanged;
             // 
             // labelterm
             // 
@@ -231,6 +233,19 @@
             exampanelheading.TabIndex = 0;
             exampanelheading.Text = "Examination Information";
             // 
+            // buttonupdate
+            // 
+            buttonupdate.BackColor = Color.Chartreuse;
+            buttonupdate.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonupdate.ForeColor = Color.Blue;
+            buttonupdate.Location = new Point(390, 2129);
+            buttonupdate.Name = "buttonupdate";
+            buttonupdate.Size = new Size(170, 65);
+            buttonupdate.TabIndex = 3;
+            buttonupdate.Text = "Update Marks";
+            buttonupdate.UseVisualStyleBackColor = false;
+            buttonupdate.Click += buttonupdate_Click;
+            // 
             // ExaminationForm
             // 
             AutoScroll = true;
@@ -238,7 +253,6 @@
             Controls.Add(exampanel);
             Name = "ExaminationForm";
             Text = "https://www.examination.computevalidation.mwanachesoftware.ac.com";
-            Load += ExaminationForm_Load;
             exampanel.ResumeLayout(false);
             exampanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -286,12 +300,13 @@
         private Label exampanelheading;
         private ComboBox comboterm;
         private Label labelterm;
-        private Button buttonprintresult;
         private Button buttonviewresult;
         private Button buttonentermarks;
         private DataGridView dataGridView1;
         private Button buttonsavemarks;
         private Button buttoncomputeresult;
         private Button buttonexamdetails;
+        private Button buttonSortPositions;
+        private Button buttonupdate;
     }
 }

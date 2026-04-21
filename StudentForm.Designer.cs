@@ -602,9 +602,9 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(371, 272);
             label5.Name = "label5";
-            label5.Size = new Size(89, 25);
+            label5.Size = new Size(87, 25);
             label5.TabIndex = 1;
-            label5.Text = "Sir Name";
+            label5.Text = "Surname";
             // 
             // label13
             // 
